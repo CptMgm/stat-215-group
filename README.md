@@ -5,7 +5,15 @@ Live colab is here: https://colab.research.google.com/drive/1gmnwWN0POHAz-zj5zxx
 overleaf: 
 Meeting: Friday 11am to 12pm
 
-Bogdan: neural network 
+Overleaf writing: 
+- Introduction: Anqi (description of domain problem, climate change, classification problem (clouds)
+- EDA: Bodgan
+- Feature Selection/Engineering (autoencoder): Finn
+- Data Splitting: Bodgan
+- Modeling (3 parts): Neural Network & Ensemble (Bodgan),Logistic Regression (Joseph), Random Forest (Anqi)
+- Conclusion: Joseph
+  
+Bogdan: neural network/Ensemble
 Joseph: Logistc regression 
 Anqi: Random forest 
 Finn: autoencoder 
