@@ -1,0 +1,15 @@
+
+  | Name    | Type       | Params | Mode
+-----------------------------------------------
+0 | encoder | Sequential | 91.8 K | train
+1 | decoder | Sequential | 92.5 K | train
+-----------------------------------------------
+184 K     Trainable params
+0         Non-trainable params
+184 K     Total params
+0.737     Total estimated model params size (MB)
+14        Modules in train mode
+0         Modules in eval mode
+Epoch 0:  52%|███████████████████████████▎                         | 4451/8625 [01:46<01:39, 41.96it/s, v_num=1axy]
+C:\Users\f3met\miniconda3\Lib\site-packages\lightning\pytorch\trainer\connectors\data_connector.py:424: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=7` in the `DataLoader` to improve performance.
+C:\Users\f3met\miniconda3\Lib\site-packages\lightning\pytorch\trainer\connectors\data_connector.py:424: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=7` in the `DataLoader` to improve performance.

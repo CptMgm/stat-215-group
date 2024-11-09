@@ -1,0 +1,21 @@
+2024-11-08 22:37:06,188 INFO    MainThread:2144 [wandb_setup.py:_flush():79] Current SDK version is 0.18.6
+2024-11-08 22:37:06,189 INFO    MainThread:2144 [wandb_setup.py:_flush():79] Configure stats pid to 2144
+2024-11-08 22:37:06,189 INFO    MainThread:2144 [wandb_setup.py:_flush():79] Loading settings from C:\Users\f3met\.config\wandb\settings
+2024-11-08 22:37:06,191 INFO    MainThread:2144 [wandb_setup.py:_flush():79] Loading settings from C:\Users\f3met\OneDrive\Desktop\Work\Berkeley\stat-215-group\lab4\code\wandb\settings
+2024-11-08 22:37:06,191 INFO    MainThread:2144 [wandb_setup.py:_flush():79] Loading settings from environment variables: {}
+2024-11-08 22:37:06,191 INFO    MainThread:2144 [wandb_setup.py:_flush():79] Applying setup settings: {'mode': None, '_disable_service': None}
+2024-11-08 22:37:06,192 INFO    MainThread:2144 [wandb_setup.py:_flush():79] Inferring run settings from compute environment: {'program_relpath': 'lab4\\code\\autoencoder\\lab4_autoencoder.py', 'program_abspath': 'c:\\Users\\f3met\\OneDrive\\Desktop\\Work\\Berkeley\\stat-215-group\\lab4\\code\\autoencoder\\lab4_autoencoder.py', 'program': 'c:\\Users\\f3met\\OneDrive\\Desktop\\Work\\Berkeley\\stat-215-group\\lab4\\code\\autoencoder\\lab4_autoencoder.py'}
+2024-11-08 22:37:06,192 INFO    MainThread:2144 [wandb_setup.py:_flush():79] Applying login settings: {}
+2024-11-08 22:37:06,192 INFO    MainThread:2144 [wandb_setup.py:_flush():79] Applying login settings: {'api_key': '***REDACTED***'}
+2024-11-08 22:37:06,193 INFO    MainThread:2144 [wandb_init.py:_log_setup():533] Logging user logs to .\wandb\run-20241108_223706-tpkw1axy\logs\debug.log
+2024-11-08 22:37:06,193 INFO    MainThread:2144 [wandb_init.py:_log_setup():534] Logging internal logs to .\wandb\run-20241108_223706-tpkw1axy\logs\debug-internal.log
+2024-11-08 22:37:06,193 INFO    MainThread:2144 [wandb_init.py:init():619] calling init triggers
+2024-11-08 22:37:06,194 INFO    MainThread:2144 [wandb_init.py:init():626] wandb.init called with sweep_config: {}
+config: {'data': {'patch_size': 9}, 'optimizer': {}, 'checkpoint': {'dirpath': 'checkpoints', 'filename': 'best-checkpoint', 'save_top_k': 1, 'monitor': 'val_loss', 'mode': 'min'}, 'wandb': {}, 'trainer': {}}
+2024-11-08 22:37:06,194 INFO    MainThread:2144 [wandb_init.py:init():669] starting backend
+2024-11-08 22:37:06,194 INFO    MainThread:2144 [wandb_init.py:init():673] sending inform_init request
+2024-11-08 22:37:06,201 INFO    MainThread:2144 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=spawn, using: spawn
+2024-11-08 22:37:06,203 INFO    MainThread:2144 [wandb_init.py:init():686] backend started and connected
+2024-11-08 22:37:06,212 INFO    MainThread:2144 [wandb_init.py:init():781] updated telemetry
+2024-11-08 22:37:06,319 INFO    MainThread:2144 [wandb_init.py:init():814] communicating run to backend with 90.0 second timeout
+2024-11-08 22:37:07,069 INFO    MainThread:2144 [wandb_init.py:init():867] starting run threads in backend

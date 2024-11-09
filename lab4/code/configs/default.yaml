@@ -1,0 +1,12 @@
+data:
+  patch_size: 32
+
+optimizer:
+
+autoencoder:
+
+checkpoint:
+
+wandb:
+
+trainer:

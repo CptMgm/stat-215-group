@@ -1,0 +1,32 @@
+{
+  "os":  "Windows-11-10.0.22631-SP0",
+  "python":  "3.12.3",
+  "startedAt":  "2024-11-09T06:37:06.203751Z",
+  "program":  "c:\\Users\\f3met\\OneDrive\\Desktop\\Work\\Berkeley\\stat-215-group\\lab4\\code\\autoencoder\\lab4_autoencoder.py",
+  "codePath":  "lab4\\code\\autoencoder\\lab4_autoencoder.py",
+  "git":  {
+    "remote":  "https://github.com/CptMgm/stat-215-group.git",
+    "commit":  "0a66a86d1f9da0e3d5bf917b2a1a970dc2cb212b"
+  },
+  "email":  "mfhdrzgiuhugzkiftu@gmail.com",
+  "root":  ".",
+  "host":  "DESKTOP-THCAV4K",
+  "username":  "f3met",
+  "executable":  "C:\\Users\\f3met\\miniconda3\\python.exe",
+  "codePathLocal":  "autoencoder\\lab4_autoencoder.py",
+  "cpu_count":  4,
+  "cpu_count_logical":  8,
+  "disk":  {
+    "/":  {
+      "total":  "494039724032",
+      "used":  "373219565568"
+    }
+  },
+  "memory":  {
+    "total":  "8460365824"
+  },
+  "cpu":  {
+    "count":  4,
+    "countLogical":  8
+  }
+}
