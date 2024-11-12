@@ -1,0 +1,2 @@
+best_roc_auc,best_accuracy,best_params
+0.9434254842655423,0.8503136175266908,"{'bootstrap': True, 'criterion': 'entropy', 'max_depth': 10, 'min_samples_leaf': 4, 'min_samples_split': 2, 'n_estimators': 200}"
