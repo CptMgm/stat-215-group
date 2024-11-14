@@ -7,4 +7,4 @@
 #SBATCH --mail-type=ALL
 
 #we perform hyperparameter tuning when training on the first image
-python trainhyper.py > trainhyper.out
+python trainhyper_reduc.py > trainhyper_reduc.out
