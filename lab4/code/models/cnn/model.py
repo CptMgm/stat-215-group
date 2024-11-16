@@ -18,12 +18,14 @@ class UNetSegmenter(pl.LightningModule):
         self,
         in_channels: int = 8,
         out_channels: int = 1,
+        device: str = "mps",
     ):
         """
         Initialize the U-Net model for semantic segmentation of cloud images.
 
         :param in_channels: Number of input channels. (Default: 8)
         :param out_channels: Number of output channels. Should be 1 for binary segmentation. (Default: 1)
+        :param device: Device to use to train the model on. (Default: "mps")
         """
         super().__init__()
 
@@ -35,8 +37,7 @@ class UNetSegmenter(pl.LightningModule):
         self.loss_fn = nn.BCELoss()
 
         # Performance metrics
-        #device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        device = torch.device("mps")
+        device = torch.device(device)
         self.train_metrics = {
             "train_accuracy": BinaryAccuracy().to(device),
             "train_precision": BinaryPrecision().to(device),
