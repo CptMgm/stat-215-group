@@ -1,0 +1,2 @@
+best_roc_auc,best_accuracy,best_params
+0.96165926450657,0.8838521588024788,"{'bootstrap': False, 'criterion': 'gini', 'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 10, 'n_estimators': 100}"

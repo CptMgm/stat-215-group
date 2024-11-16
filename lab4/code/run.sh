@@ -8,9 +8,9 @@ jupyter nbconvert --to notebook --execute --inplace EDA/eda.ipynb
 # Logistic Regression
 jupyter nbconvert --to notebook --execute --inplace models/logistic_regression/logistic_regression.ipynb
 # Random Forest
-python models/random_forest/trainhyper_full.py
-python models/random_forest/trainhyper_reduc.py
-jupyter nbconvert --to notebook --execute --inplace models/random_forest/random_forest.ipynb
+python models/randomforest/trainhyper_full.py
+python models/randomforest/trainhyper_reduc.py
+jupyter nbconvert --to notebook --execute --inplace models/randomforest/randomforest.ipynb
 # Weighted Ensembles
 python models/ensemble/data_preprocessing.py
 python models/ensemble/fit_model.py
