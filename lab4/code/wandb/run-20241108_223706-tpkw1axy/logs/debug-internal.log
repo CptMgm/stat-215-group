@@ -1,8 +1,0 @@
-{"time":"2024-11-08T22:37:06.2354879-08:00","level":"INFO","msg":"using version","core version":"0.18.6"}
-{"time":"2024-11-08T22:37:06.2369913-08:00","level":"INFO","msg":"created symlink","path":"wandb\\run-20241108_223706-tpkw1axy\\logs\\debug-core.log"}
-{"time":"2024-11-08T22:37:06.5396521-08:00","level":"INFO","msg":"created new stream","id":"tpkw1axy"}
-{"time":"2024-11-08T22:37:06.5402291-08:00","level":"INFO","msg":"stream: started","id":"tpkw1axy"}
-{"time":"2024-11-08T22:37:06.5407343-08:00","level":"INFO","msg":"sender: started","stream_id":"tpkw1axy"}
-{"time":"2024-11-08T22:37:06.5412623-08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"tpkw1axy"}}
-{"time":"2024-11-08T22:37:06.5407343-08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"tpkw1axy"}}
-{"time":"2024-11-08T22:37:07.0850132-08:00","level":"INFO","msg":"Starting system monitor"}

@@ -14,3 +14,5 @@ dependencies:
     - torch
     - torchvision
     - lightning
+    - autogluon
+    - pygraphviz

@@ -1,21 +1,30 @@
+from typing import Any
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 import pytorch_lightning as pl
 from torchmetrics.classification import (
-    BinaryAccuracy, BinaryAUROC, BinaryPrecision, BinaryRecall, BinaryF1Score, BinaryAveragePrecision
+    BinaryAccuracy, BinaryPrecision, BinaryRecall, BinaryF1Score,
 )
 
 
 class UNetSegmenter(pl.LightningModule):
+    """
+    U-Net model for semantic segmentation of cloud images.
+    """
     def __init__(
         self,
         in_channels: int = 8,
         out_channels: int = 1,
-        learning_rate: float = 1e-4,
-        weight_decay: float = 1e-5,
     ):
+        """
+        Initialize the U-Net model for semantic segmentation of cloud images.
+
+        :param in_channels: Number of input channels. (Default: 8)
+        :param out_channels: Number of output channels. Should be 1 for binary segmentation. (Default: 1)
+        """
         super().__init__()
 
         # Initialize model weights
@@ -25,30 +34,29 @@ class UNetSegmenter(pl.LightningModule):
         # Use the binary cross-entropy loss function
         self.loss_fn = nn.BCELoss()
 
-        # Initialize optimizer parameters
-        self.learning_rate = learning_rate
-        self.weight_decay = weight_decay
-
         # Performance metrics
-        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        #device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        device = torch.device("mps")
         self.train_metrics = {
             "train_accuracy": BinaryAccuracy().to(device),
-            "train_auroc": BinaryAUROC().to(device),
             "train_precision": BinaryPrecision().to(device),
             "train_recall": BinaryRecall().to(device),
             "train_f1": BinaryF1Score().to(device),
-            "train_average_precision": BinaryAveragePrecision().to(device),
         }
         self.val_metrics = {
             "val_accuracy": BinaryAccuracy().to(device),
-            "val_auroc": BinaryAUROC().to(device),
             "val_precision": BinaryPrecision().to(device),
             "val_recall": BinaryRecall().to(device),
             "val_f1": BinaryF1Score().to(device),
-            "val_average_precision": BinaryAveragePrecision().to(device),
         }
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
+        """
+        Forward pass of the U-Net model.
+
+        :param x: Input tensor of shape (batch_size, in_channels, height, width).
+        :return: Output tensor of shape (batch_size, out_channels, height, width).
+        """
         # Contracting Path
         # In each contracting double convolution, we increase the number of channels by a factor of 2
         # After each convolution layer, we apply ReLU activation
@@ -108,6 +116,13 @@ class UNetSegmenter(pl.LightningModule):
         return x
 
     def training_step(self, batch, batch_idx):
+        """
+        Perform a single training step.
+
+        :param batch: Input batch.
+        :param batch_idx: Index of the batch.
+        :return: The loss for the batch.
+        """
         features, labels = batch
         labels = labels.unsqueeze(1).float()
 
@@ -130,6 +145,13 @@ class UNetSegmenter(pl.LightningModule):
         return loss
 
     def validation_step(self, batch, batch_idx):
+        """
+        Perform a single validation step.
+
+        :param batch: Input batch.
+        :param batch_idx: Index of the batch.
+        :return: The loss for the batch.
+        """
         features, labels = batch
         labels = labels.unsqueeze(1).float()
 
@@ -151,20 +173,44 @@ class UNetSegmenter(pl.LightningModule):
 
         return loss
 
+    def predict_step(self, batch, batch_idx):
+        """
+        Perform a single prediction step.
+
+        :param batch: Input batch.
+        :param batch_idx: Index of the batch.
+        :return: The model outputs.
+        """
+        features, _ = batch
+
+        # Forward pass
+        outputs = self(features)
+
+        return outputs
+
     def on_train_epoch_end(self):
+        """
+        Log training metrics at the end of each epoch.
+        """
         # Log training metrics
         for name, metric in self.train_metrics.items():
             self.log(name, metric.compute())
             metric.reset()
 
     def on_validation_epoch_end(self):
+        """
+        Log validation metrics at the end of each epoch.
+        """
         # Log validation metrics
         for name, metric in self.val_metrics.items():
             self.log(name, metric.compute())
             metric.reset()
 
     def configure_optimizers(self):
-        optimizer = optim.Adam(self.parameters(), lr=self.learning_rate, weight_decay=self.weight_decay)
+        """
+        Configure the optimizer for training.
+        """
+        optimizer = optim.Adam(self.parameters())
         return optimizer
 
     def _init_contracting_path(self, in_channels: int):

@@ -1,18 +1,24 @@
 We have all agreed on these attributions:
 
-____ worked on:
--
--
+Bogdan Kostic worked on:
+- EDA
+- Autoencoder
+- Data Splitting
+- Weighted Ensemble
+- Convolutional Neural Network
+- Model Comparison
+- Stability Analysis
+- Error Analysis
+- Conclusion
 
-____ worked on:
--
--
+Anqi Wang worked on:
+- EDA
+- Random Forest
+- Introduction
 
-____ worked on:
--
--
+Joseph Kouadio worked on:
+- EDA
+- Logistic Regression
 
-____ worked on:
--
--
-
+Finn Metz worked on:
+- EDA

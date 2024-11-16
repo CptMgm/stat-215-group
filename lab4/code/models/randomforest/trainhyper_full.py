@@ -10,9 +10,10 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV, PredefinedSplit
 import joblib
 
-image_1 = pd.read_csv("image1.txt", delim_whitespace=True, header=None)
-image_2 = pd.read_csv("image2.txt", delim_whitespace=True, header=None)
-image_3 = pd.read_csv("image3.txt", delim_whitespace=True, header=None)
+data_path = f"../../../data/image_data"
+image_1 = pd.read_csv(f"{data_path}/image1.txt", delim_whitespace=True, header=None)
+image_2 = pd.read_csv(f"{data_path}/image2.txt", delim_whitespace=True, header=None)
+image_3 = pd.read_csv(f"{data_path}/image3.txt", delim_whitespace=True, header=None)
 
 column_names = ['y_coor', 'x_coor', 'expert_label', 'NDAI', 'SD', 'CORR', 'Radiance_angle_DF','Radiance_angle_CF','Radiance_angle_BF','Radiance_angle_AF', 'Radiance_angle_AN'] 
 image_1.columns = column_names
@@ -92,7 +93,8 @@ results_parameter = {
 }
 
 results_parameter = pd.DataFrame(results_parameter)
-results_parameter.to_csv('results_parameter.csv', index=False)
+results_parameter.to_csv('results_parameter_full.csv', index=False)
 
 # Save the best model
-#joblib.dump(best_rf, 'best_random_forest_model.pkl')
+best_rf = grid_search.best_estimator_
+joblib.dump(best_rf, 'best_random_forest_model_full.pkl')

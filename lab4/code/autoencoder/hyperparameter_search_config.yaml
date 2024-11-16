@@ -1,0 +1,17 @@
+method: grid
+metric:
+  goal: minimize
+  name: val_loss
+parameters:
+  loss_type:
+    values: ["rmse", "mae"]
+  kernel_size:
+    values: [3, 5, 7]
+  embedding_size:
+    values: [2, 4, 6, 8]
+  max_epochs:
+    value: 250
+  patience:
+    value: 10
+  batch_size:
+    value: 1

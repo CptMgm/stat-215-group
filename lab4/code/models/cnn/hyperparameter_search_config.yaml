@@ -1,16 +1,8 @@
-method: bayes
+method: grid
 metric:
   goal: maximize
-  name: loss
+  name: best_val_accuracy
 parameters:
-  learning_rate:
-    distribution: log_uniform
-    max: 0.1
-    min: 1e-6
-  weight_decay:
-    distribution: log_uniform
-    max: 0.1
-    min: 1e-6
   feature_set:
     values: ["all", "raw_only", "engineered_only"]
   image_augmentation:
@@ -19,3 +11,5 @@ parameters:
     value: 100
   patience:
     value: 10
+  batch_size:
+    value: 16
